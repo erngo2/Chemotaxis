@@ -1,8 +1,10 @@
 Bacteria[] bob; 
+int c = 10;
  void setup()   
  {     
- 	size(700,700);
+ 	size(1000,1000);
  	frameRate(200);
+ 	noStroke();
  	bob = new Bacteria[1250];
  	for(int i = 0; i < bob.length; i++){
  		bob[i] = new Bacteria();
@@ -22,12 +24,13 @@ Bacteria[] bob;
  	int[] colour;
  	Bacteria()
  	{
- 		myX = (int)(Math.random() * 10) + 345;
- 		myY = (int)(Math.random() * 10) + 345;
- 		colour = new int[3];
+ 		myX = (int)(Math.random() * 10) + 500;
+ 		myY = (int)(Math.random() * 10) + 500;
+ 		colour = new int[4];
  		colour[0] = (int)(Math.random() * 255);
  		colour[1] = (int)(Math.random() * 255);
  		colour[2] = (int)(Math.random() * 255);
+ 		colour[3] = (int)(Math.random() * 255);
  	}
  	void move()
  	{
@@ -46,32 +49,30 @@ Bacteria[] bob;
  	}
  	void show()
  	{
- 		fill(colour[0], colour[1], colour[2]);
- 		ellipse(myX, myY, 10, 10);
+ 		fill(colour[0], colour[1], colour[2], colour[3]);
+ 		ellipse(myX, myY, c, c);
  	}
  }    
 void keyPressed(){
-	for(int i = 0; i < bob.length; i++){
-		for(int a = 0; a < 3; a++){
-			bob[i].colour[a] = (int)(Math.random() * 255);
+	if(keyCode == TAB){
+		for(int i = 0; i < bob.length; i++){
+			for(int a = 0; a < 4; a++){
+				bob[i].colour[a] = (int)(Math.random() * 255);
+			}
 		}
 	}
+	if(keyCode == UP)
+		c++;
+	if(keyCode == DOWN)
+		c--;
 }
  void mousePressed()
  {
- 	/*if(mouseButton == LEFT){
- 		for(int i = 0; i < bob.length; i++)
- 		{
- 			bob[i].myX = ((int)(Math.random()* 4) - 1) + mouseX;
- 			bob[i].myY = ((int)(Math.random()* 5) - 2) + mouseY;
-		}
- 	} Useless, first attempt at if mouseButton == LEFT in move();
- 	*/
  	if(mouseButton == RIGHT){
  		for(int i = 0; i < bob.length; i++)
  		{
- 		bob[i].myX = (int)(Math.random() * 10) + 345;
- 		bob[i].myY = (int)(Math.random() * 10) + 345;
+ 		bob[i].myX = (int)(Math.random() * 10) + 500;
+ 		bob[i].myY = (int)(Math.random() * 10) + 500;
  		}
  	}
  }
