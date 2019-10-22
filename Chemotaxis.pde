@@ -2,10 +2,10 @@ Bacteria[] bob;
 int c = 10;
  void setup()   
  {     
- 	size(1000,1000);
+ 	size(900,900);
  	frameRate(200);
  	noStroke();
- 	bob = new Bacteria[1250];
+ 	bob = new Bacteria[1000];
  	for(int i = 0; i < bob.length; i++){
  		bob[i] = new Bacteria();
  	}
@@ -24,8 +24,8 @@ int c = 10;
  	int[] colour;
  	Bacteria()
  	{
- 		myX = (int)(Math.random() * 10) + 500;
- 		myY = (int)(Math.random() * 10) + 500;
+ 		myX = (int)(Math.random() * 10) + 450;
+ 		myY = (int)(Math.random() * 10) + 450;
  		colour = new int[4];
  		colour[0] = (int)(Math.random() * 255);
  		colour[1] = (int)(Math.random() * 255);
@@ -71,8 +71,8 @@ void keyPressed(){
  	if(mouseButton == RIGHT){
  		for(int i = 0; i < bob.length; i++)
  		{
- 		bob[i].myX = (int)(Math.random() * 10) + 500;
- 		bob[i].myY = (int)(Math.random() * 10) + 500;
+ 		bob[i].myX = (int)(Math.random() * 10) + 450;
+ 		bob[i].myY = (int)(Math.random() * 10) + 450;
  		}
  	}
  }
