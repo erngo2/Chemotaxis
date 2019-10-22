@@ -54,7 +54,7 @@ int c = 10;
  	}
  }    
 void keyPressed(){
-	if(keyCode == TAB){
+	if(keyCode == ENTER || keyCode == RETURN){
 		for(int i = 0; i < bob.length; i++){
 			for(int a = 0; a < 4; a++){
 				bob[i].colour[a] = (int)(Math.random() * 255);
